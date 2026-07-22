@@ -1,0 +1,23 @@
+text = "Hello World"
+reversed_text = " ".join([word[::-1] for word in text.split()])
+print(reversed_text)
+
+
+
+
+Step 1: text.split()
+What it does: Breaks the input string into a list of individual words whenever it encounters whitespace.
+Result: {"Hello World"} ---> ['Hello', 'World']
+
+Step 2: [word[::-1] for word in ...] (List Comprehension)
+What it does: Loops through each word in the list and applies the slice [::-1] to reverse that word.
+How [::-1] works:
+Python slicing uses the syntax [start:stop:step].
+Setting step = -1 tells Python to traverse the string backwards from end to start.
+'Hello'``[::-1] becomes 'olleH'.
+'World'``[::-1] becomes 'dlroW'.
+Result: ['Hello', 'World']} ---> ['olleH', 'dlroW']
+
+Step 3: " ".join(...)
+What it does: Takes the list of reversed words and glues them back together into a single string, inserting a space " " between each element.
+Result: ['olleH', 'dlroW'] ---> {"olleH dlroW"}
